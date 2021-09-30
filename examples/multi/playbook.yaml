@@ -1,0 +1,21 @@
+---
+  - hosts: all
+    tasks:
+      - name: update apt cache and upgrade system
+        apt:
+          update_cache: yes
+          upgrade: yes
+
+  - hosts: webservers
+    tasks:
+      - name: install nginx webserver
+        apt:
+          name: nginx
+          state: present
+
+  - hosts: loadbalancers
+    tasks:
+      - name: install haproxy loadbalancer
+        apt:
+          name: haproxy
+          state: present

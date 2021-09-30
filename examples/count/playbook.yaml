@@ -1,0 +1,11 @@
+---
+  - hosts: webservers
+    tasks:
+      - name: update apt cache and upgrade system
+        apt:
+          update_cache: yes
+          upgrade: yes
+      - name: install nginx webserver
+        apt:
+          name: nginx
+          state: present
