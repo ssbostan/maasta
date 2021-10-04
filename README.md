@@ -2,7 +2,7 @@
 
 MAASTA is a wrapper to create an Ansible inventory for MAAS instances that are provisioned by Terraform.
 
-This script is used to build an end to end automation DevOps lifecycle.
+This script is used to build an **end to end automation** DevOps lifecycle.
 
 ## What is MAAS?
 
@@ -40,6 +40,8 @@ terraform show -json | python -m maasta
 
 # How to contribute:
 
-Currently, MAASTA can create inventory for machines that are provisioned with Ubuntu distribution. The script is tested with minimum viable tests and may break in some situations. Don't hesitate to contribute. In the case of a bug, please file an issue.
+Currently, MAASTA can create inventory for machines that are provisioned with Ubuntu distribution. The script is tested with minimum viable tests and may break in some situations.
+
+Don't hesitate to contribute. In the case of a bug, please file an issue.
 
 Copyright 2021 Saeid Bostandoust <ssbostan@linuxmail.org>
