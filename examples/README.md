@@ -25,6 +25,8 @@ python -m venv venv
 
 source venv/bin/activate
 
+pip install -U pip
+
 git clone https://github.com/ssbostan/maasta
 
 cd maasta
