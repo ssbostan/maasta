@@ -27,7 +27,11 @@ source venv/bin/activate
 
 git clone https://github.com/ssbostan/maasta
 
-cd maasta/examples/single
+cd maasta
+
+pip install .
+
+cd examples/single
 
 export MAAS_API_URL=http://YOUR-MAAS-API-URL:5240/MAAS
 export MAAS_API_KEY=YOUR-MAAS-API-KEY
