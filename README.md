@@ -1,5 +1,19 @@
 # MAASTA (MAAS Terraform Ansible)
 
+![Visits Badge](https://badges.pufler.dev/visits/ssbostan/maasta)
+![GitHub last commit](https://img.shields.io/github/last-commit/ssbostan/maasta)
+[![GitHub license](https://img.shields.io/github/license/ssbostan/maasta)](https://github.com/ssbostan/maasta/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/ssbostan/maasta)](https://github.com/ssbostan/maasta/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/ssbostan/maasta)](https://github.com/ssbostan/maasta/network)
+[![GitHub issues](https://img.shields.io/github/issues/ssbostan/maasta)](https://github.com/ssbostan/maasta/issues)
+
+<p align="center">
+ <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/b9t_ir?style=social">
+ <img alt="LinkedIn Follow" src="https://shields.io/badge/style-ssbostan-black?logo=linkedin&label=LinkedIn&link=https://www.linkedin.com/in/ssbostan">
+</p>
+
+Stargaze ![GitHub Repo stars](https://img.shields.io/github/stars/ssbostan/maasta?style=social) if you find it useful.
+
 MAASTA is a wrapper to create an Ansible inventory for MAAS instances that are provisioned by Terraform.
 
 This script is used to build an **end to end automation** DevOps lifecycle.
