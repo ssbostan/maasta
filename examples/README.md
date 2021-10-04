@@ -14,6 +14,8 @@ All Terraform **maas_instance** resources will be grouped into the **[all]** of 
 
 To start using MAASTA install prerequisites.
 
+**Attention! Currently only works on Ubuntu systems.**
+
  1. MAAS 2.9+
  2. Terraform 1.0+
  3. Ansible 2.7+
