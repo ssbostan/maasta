@@ -3,6 +3,8 @@
 
 from json import dumps, loads
 from yaml import dump
+import configparser
+
 
 class NestedDict(dict):
 
@@ -13,10 +15,13 @@ class NestedDict(dict):
             value = self[item] = type(self)()
             return value
 
+
 class AnsibleInventory:
 
     def __init__(self):
         self.inventory = NestedDict()
+        self.ini_inventory = NestedDict()
+        self.config = configparser.ConfigParser(delimiters=' ')
 
     def add(self, group, machine):
         self.inventory["all"]["hosts"][machine.fqdn]["ansible_host"] = machine.ip_addresses[0]
@@ -30,3 +35,14 @@ class AnsibleInventory:
 
     def dump(self):
         return dump(loads(dumps(self.inventory)))
+
+    def add_ini(self, group, machine):
+        self.ini_inventory[group][machine.fqdn] = f"ansible_user=ubuntu     ansible_host={machine.ip_addresses[0]}"
+
+    def dump_ini(self):
+        for section in self.ini_inventory:
+            if not self.config.has_section(section):
+                self.config.add_section(section)
+            for val in self.ini_inventory[section]:
+                self.config[section][val] = self.ini_inventory[section][val]
+        return self.config

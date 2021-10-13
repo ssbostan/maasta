@@ -14,8 +14,8 @@ from maasta.utils import AnsibleInventory
 MAAS_API_URL = environ.get("MAAS_API_URL", None)
 MAAS_API_KEY = environ.get("MAAS_API_KEY", None)
 
-def main():
 
+def main():
     if MAAS_API_URL is None:
         print("ERROR: Set MAAS_API_URL environment variable.")
         exit(1)
@@ -29,25 +29,25 @@ def main():
         exit(1)
 
     try:
-        Credentials.parse(MAAS_API_KEY) # Validate X:Y:Z token format.
+        Credentials.parse(MAAS_API_KEY)  # Validate X:Y:Z token format.
     except:
         print("ERROR: Invalid MAAS API key.")
         exit(1)
 
-    input_data = stdin.read().strip() # Input JSON data from stdin.
+    input_data = stdin.read().strip()  # Input JSON data from stdin.
 
     if not input_data:
         print("ERROR: Invalid input data.")
         exit(1)
 
     try:
-        json_data = loads(input_data) # Convert JSON string to python dictionary.
+        json_data = loads(input_data)  # Convert JSON string to python dictionary.
     except:
         print("ERROR: Invalid JSON data.")
         exit(1)
 
     try:
-        maas_client = connect(MAAS_API_URL, apikey=MAAS_API_KEY) # Connect to MAAS server.
+        maas_client = connect(MAAS_API_URL, apikey=MAAS_API_KEY)   # Connect to MAAS server.
     except:
         print("ERROR: Cannot connect to MAAS server.")
         exit(1)
@@ -61,7 +61,17 @@ def main():
             except:
                 print("ERROR: Cannot get MAAS instance info.")
                 exit(1)
-            inventory.add(resource["name"], machine) # Adding machine into ansible inventory.
+            inventory.add(resource["name"], machine)  # Adding machine into ansible inventory.
+            inventory.add_ini(resource["name"], machine)  # Adding machine into ansible ini inventory.
+
+    try:
+        with open("inventory.ini", "a") as f:
+            inventory.dump_ini().write(f)
+    except:
+        print("ERROR: Cannot create inventory.ini file.")
+        exit(1)
+    else:
+        print("INFO: Ansible ini inventory created successfully.")
 
     try:
         with open("inventory.yaml", "w") as f:
