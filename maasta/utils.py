@@ -36,13 +36,12 @@ class AnsibleInventory:
     def dump(self):
         return dump(loads(dumps(self.inventory)))
 
-    def add_ini(self, group, machine):
-        self.ini_inventory[group][machine.fqdn] = f"ansible_user=ubuntu     ansible_host={machine.ip_addresses[0]}"
-
     def dump_ini(self):
-        for section in self.ini_inventory:
+        for section in self.inventory["all"]["children"]:
             if not self.config.has_section(section):
                 self.config.add_section(section)
-            for val in self.ini_inventory[section]:
-                self.config[section][val] = self.ini_inventory[section][val]
+            for val in self.inventory["all"]["children"][section]["hosts"]:
+                self.config[section][val] = f'ansible_user={self.inventory["all"]["children"][section]["hosts"][val]["ansible_user"]}\
+                        ansible_host={self.inventory["all"]["children"][section]["hosts"][val]["ansible_host"]}'
         return self.config
+

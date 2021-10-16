@@ -62,7 +62,6 @@ def main():
                 print("ERROR: Cannot get MAAS instance info.")
                 exit(1)
             inventory.add(resource["name"], machine)  # Adding machine into ansible inventory.
-            inventory.add_ini(resource["name"], machine)  # Adding machine into ansible ini inventory.
 
     try:
         with open("inventory.ini", "a") as f:
