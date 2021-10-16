@@ -41,7 +41,9 @@ class AnsibleInventory:
             if not self.config.has_section(section):
                 self.config.add_section(section)
             for val in self.inventory["all"]["children"][section]["hosts"]:
-                self.config[section][val] = f'ansible_user={self.inventory["all"]["children"][section]["hosts"][val]["ansible_user"]}\
-                        ansible_host={self.inventory["all"]["children"][section]["hosts"][val]["ansible_host"]}'
+                user = self.inventory["all"]["children"][section]["hosts"][val]["ansible_user"]
+                host = self.inventory["all"]["children"][section]["hosts"][val]["ansible_host"]
+                self.config[section][val] = f'ansible_user={user}  ansible_host={host}'
+                
         return self.config
 
