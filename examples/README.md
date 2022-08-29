@@ -2,7 +2,8 @@
 
 Three MAASTA examples are demonstrated in this directory:
 
- - **single**: A single machine that is provisioned by the Terraform and then the Docker will be installed by Ansible on it.
+ - **specific**: A single specific machine that is provisioned by the Terraform and then the Docker will be installed by Ansible on it.
+ - **single**: A single random machine that is provisioned by the Terraform and then the Docker will be installed by Ansible on it.
  - **count**: Multiple machines are provisioned by Terraform with a **count** meta-argument.
  - **multi**: Multiple resources and multiple machines are provisioned by the Terraform with a **count** meta-argument.
 
