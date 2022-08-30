@@ -1,4 +1,4 @@
 ### Usage:
 ```
-./deploy  My_Machine_Name
+./deploy  YOUR_MACHINE_NAME
 ```
