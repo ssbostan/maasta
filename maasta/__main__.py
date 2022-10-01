@@ -1,5 +1,5 @@
 # MAASTA (MAAS Terraform Ansible)
-# Copyright 2021 Saeid Bostandoust <ssbostan@linuxmail.org>
+# https://github.com/ssbostan/maasta
 
 from maasta.maasta import main
 
