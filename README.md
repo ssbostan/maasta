@@ -1,6 +1,5 @@
 # MAASTA (MAAS Terraform Ansible)
 
-![Visits Badge](https://badges.pufler.dev/visits/ssbostan/maasta)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ssbostan/maasta)
 [![GitHub license](https://img.shields.io/github/license/ssbostan/maasta)](https://github.com/ssbostan/maasta/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/ssbostan/maasta)](https://github.com/ssbostan/maasta/stargazers)
@@ -41,7 +40,7 @@ MAASTA accepts two environment variables, **MAAS_API_URL** and **MAAS_API_KEY**,
 ### Installation:
 
 ```bash
-pip install git+https://github.com/ssbostan/maasta.git
+pip install maasta
 ```
 
 ### Usage:
@@ -56,4 +55,4 @@ Currently, MAASTA can create inventory for machines that are provisioned with Ub
 
 Don't hesitate to contribute. In the case of a bug, please file an issue.
 
-Copyright 2021 Saeid Bostandoust <ssbostan@linuxmail.org>
+Copyright 2021-2022 Saeid Bostandoust <ssbostan@linuxmail.org>
