@@ -6,7 +6,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/ssbostan/maasta)](https://github.com/ssbostan/maasta/network)
 [![GitHub issues](https://img.shields.io/github/issues/ssbostan/maasta)](https://github.com/ssbostan/maasta/issues)
 
-![Twitter](https://img.shields.io/twitter/follow/b9t_ir?style=social)
+![Twitter](https://img.shields.io/twitter/follow/saeidbostan?style=social)
 ![LinkedIn](https://shields.io/badge/style-ssbostan-black?logo=linkedin&label=LinkedIn&link=https://www.linkedin.com/in/ssbostan)
 
 Stargaze ![GitHub Repo stars](https://img.shields.io/github/stars/ssbostan/maasta?style=social) if you find it useful.
